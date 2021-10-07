@@ -9,21 +9,21 @@ int main()
 
     while (1)
     {
-        printCursorMenu(opcaoAtual);
+        printCursor(opcaoAtual);
 
         switch (toupper(getch()))
         {
         case 'W':
             if (opcaoAtual > 1)
             {
-                deleteCursorMenu(opcaoAtual);
+                deleteCursor(opcaoAtual);
                 opcaoAtual--;
             }
             break;
         case 'S':
             if (opcaoAtual < 5)
             {
-                deleteCursorMenu(opcaoAtual);
+                deleteCursor(opcaoAtual);
                 opcaoAtual++;
             }
             break;

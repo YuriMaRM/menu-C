@@ -14,16 +14,22 @@ typedef struct score
     size_t value;
 } SCORE;
 
-// Functions
-void deleteCursorMenu(int opcaoAtual);
-void printCursorMenu(int opcaoAtual);
+// Helpers
+void fileHandler(FILE *arquivo);
+void setCursorVisibility(size_t visibility);
+void setCursorPosition(int x, int y);
 
-void printMenu();
 
+// Screens
 void creditos();
 void historia();
 void jogar();
 void ranking();
+
+// Menu
+void deleteCursor(int opcaoAtual);
+void printCursor(int opcaoAtual);
+void printMenu();
 void setup();
 
 #endif

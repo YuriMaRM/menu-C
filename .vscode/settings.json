@@ -7,7 +7,7 @@
         "stdio.h": "c"
     },
     "C_Cpp.default.browse.path": [],
-    "c-cpp-compile-run.c-flags": "index.h funcoes.c -Wall -Wextra",
+    "c-cpp-compile-run.c-flags": "index.h funcoes.c ranking.c menu.c historia.c creditos.c -Wall -Wextra",
     "c-cpp-compile-run.run-in-external-terminal": true,
     "C_Cpp.errorSquiggles": "Disabled"
 }
