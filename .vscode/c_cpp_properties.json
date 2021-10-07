@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${default}",
-                "${workspaceFolder}/src/"
+                "${workspaceFolder}"
             ],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "cStandard": "gnu11",
