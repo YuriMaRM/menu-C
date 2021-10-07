@@ -1,24 +1,29 @@
 #ifndef INDEX
 #define INDEX
+
 // Includes
-#include <stdio.h>
-#include <stdlib.h>
 #include <conio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <windows.h>
 
-typedef struct pontuacao
+typedef struct score
 {
-    int valor;
-    char nome[3];
-} Pontuacao;
+    char name[3];
+    size_t value;
+} SCORE;
 
 // Functions
-void start();
-void historia();
-void ranking();
+void deleteCursorMenu(int opcaoAtual);
+void printCursorMenu(int opcaoAtual);
+
+void printMenu();
+
 void creditos();
-void selecaoMenu(int opcaoAtual);
+void historia();
 void jogar();
-void cabessarioMenu();
-void apagarSelecaoMenu(int opcaoAtual);
+void ranking();
+void setup();
+
 #endif

@@ -2,56 +2,58 @@
 
 int main()
 {
-    start();
+    setup();
+    printMenu();
+
     int opcaoAtual = 1;
-    while (1) // enqaunto o menu for true o menu continua
+
+    while (1)
     {
-        selecaoMenu(opcaoAtual);
-        switch (getch()) // getch espera um valor e verifica o valor no switch
+        printCursorMenu(opcaoAtual);
+
+        switch (toupper(getch()))
         {
-        case '1': // caso ele queria que a opção do menu suba
+        case 'W':
             if (opcaoAtual > 1)
             {
-                apagarSelecaoMenu(opcaoAtual);
+                deleteCursorMenu(opcaoAtual);
                 opcaoAtual--;
             }
             break;
-        case '3': // caso ele queria que a opção do menu desça
+        case 'S':
             if (opcaoAtual < 5)
             {
-                apagarSelecaoMenu(opcaoAtual);
+                deleteCursorMenu(opcaoAtual);
                 opcaoAtual++;
-            } // aumenta a opcaoAtual em 1
+            }
             break;
-        case '2':                // caso ele escolha uma opção
-            if (opcaoAtual != 5) // verifica se o usuario não escolheu apenas por sair
+        case 'D':
+            if (opcaoAtual != 5)
             {
                 system("cls");
-                switch (opcaoAtual) // verifica qual opção foi escolhida
+                switch (opcaoAtual)
                 {
                 case 1:
                     jogar();
                     break;
                 case 2:
-                    historia(); // executa a opção historia
+                    historia();
                     break;
                 case 3:
-                    ranking(); // executa a opção ranking
+                    ranking();
                     break;
                 case 4:
-                    creditos(); // executa a opção creditos
+                    creditos();
                     break;
                 }
-                opcaoAtual = 1; // seta a opcaoAatual em 1 para voltar a primeira posição
 
-                getch(); // pausa o sistema
-                cabessarioMenu();
+                printMenu();
             }
             else
-                return 0; // finaliza o menu
+                return 0;
             break;
         default:
-            break; // volta ao inicio do menu
+            break;
         }
     }
 }
