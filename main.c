@@ -1,6 +1,5 @@
 #include "index.h"
 
-
 int main()
 {
     start();
@@ -8,19 +7,21 @@ int main()
     while (1) // enqaunto o menu for true o menu continua
     {
         selecaoMenu(opcaoAtual);
-        switch (getch())        // getch espera um valor e verifica o valor no switch
+        switch (getch()) // getch espera um valor e verifica o valor no switch
         {
-        case '1':               // caso ele queria que a opção do menu suba
-            if (opcaoAtual > 1){
+        case '1': // caso ele queria que a opção do menu suba
+            if (opcaoAtual > 1)
+            {
                 apagarSelecaoMenu(opcaoAtual);
-                opcaoAtual--;  
+                opcaoAtual--;
             }
             break;
-        case '3':               // caso ele queria que a opção do menu desça
-            if (opcaoAtual < 5){
+        case '3': // caso ele queria que a opção do menu desça
+            if (opcaoAtual < 5)
+            {
                 apagarSelecaoMenu(opcaoAtual);
-                opcaoAtual++;  
-            }   // aumenta a opcaoAtual em 1
+                opcaoAtual++;
+            } // aumenta a opcaoAtual em 1
             break;
         case '2':                // caso ele escolha uma opção
             if (opcaoAtual != 5) // verifica se o usuario não escolheu apenas por sair
