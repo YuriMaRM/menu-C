@@ -146,20 +146,29 @@ void jogar()
         switch (toupper(getch()))
         {
         case 'W':
-            (charASCII > 65) ? charASCII-- : (charASCII = 90);
+            if (charASCII > 65)
+                charASCII--;
+            else
+                (charASCII = 90);
+
             newScore.name[posicao] = (char)charASCII;
             break;
         case 'S':
-            (charASCII < 90) ? charASCII++ : (charASCII = 65);
+            if (charASCII < 90)
+                charASCII++;
+            else
+                (charASCII = 65);
+
             newScore.name[posicao] = (char)charASCII;
             break;
         case 'D':
-            charASCII = 65;
-
-            if (((int)newScore.name[posicao] <= 90) && ((int)newScore.name[posicao] >= 65))
-                charASCII = (int)newScore.name[posicao];
+            if (((int)newScore.name[posicao + 1] <= 90) && ((int)newScore.name[posicao + 1] >= 65) && (posicao < 3))
+                charASCII = (int)newScore.name[posicao + 1];
             else
+            {
                 newScore.name[posicao] = (char)charASCII;
+                charASCII = 65;
+            }
 
             posicao++;
             break;
