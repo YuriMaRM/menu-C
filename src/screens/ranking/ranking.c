@@ -4,7 +4,7 @@
 void getScores(SCORE *scores)
 {
     size_t i = 0;
-    FILE *scoresFile = fopen("./arquivos/scores.bin", "rb");
+    FILE *scoresFile = fopen("./files/scores.bin", "rb");
     fileHandler(scoresFile);
     SCORE aux;
 
@@ -35,16 +35,16 @@ void printRanking(SCORE *scores)
     printf("\033[1mRANKING\n\n");
     printf("  NOME \t\t PONTOS\033[0m\n");
     for (size_t i = 0; i < 10; i++)
-        printf("%2d - %s \t %d\n", i + 1, scores[i].name, scores[i].value);    
+        printf("%2d - %s \t %d\n", i + 1, scores[i].name, scores[i].value);
 }
 
 // Insere um score no arquivo
 void insertScore(SCORE *newScores)
 {
-    FILE *scoresFile = fopen("./arquivos/scores.bin", "wb");
+    FILE *scoresFile = fopen("./files/scores.bin", "wb");
     fileHandler(scoresFile);
 
-    for (size_t i = 0; i < 10 && (int) newScores[i].name[0] != '*' ; i++)
+    for (size_t i = 0; i < 10 && (int)newScores[i].name[0] != '*'; i++)
         fwrite(&newScores[i], sizeof(SCORE), 1, scoresFile);
     fclose(scoresFile);
 }
@@ -58,8 +58,6 @@ void ranking()
 
     getch();
 }
-
-
 
 void jogar()
 {
