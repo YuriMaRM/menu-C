@@ -8,6 +8,5 @@
     },
     "C_Cpp.default.browse.path": [],
     "c-cpp-compile-run.c-flags": "./lib/index.h ./helpers/helpers.c ./screens/ranking/ranking.c ./screens/menu/menu.c ./screens/historia/historia.c ./screens/creditos/creditos.c -Wall -Wextra",
-    "c-cpp-compile-run.run-in-external-terminal": true,
-    "C_Cpp.errorSquiggles": "Disabled"
+    "c-cpp-compile-run.run-in-external-terminal": true
 }
