@@ -2,10 +2,14 @@
 
 int main()
 {
-    setup();
-    printMenu();
+    // Configurações iniciais
+    FILE *scoresFile = fopen("scores.bin", "ab");
+    fclose(scoresFile);
+    setCursorVisibility(0);
+    system("chcp 65001");
 
-    int opcaoAtual = 1;
+    printMenu();
+    size_t opcaoAtual = 1;
 
     while (1)
     {
@@ -14,43 +18,35 @@ int main()
         switch (toupper(getch()))
         {
         case 'W':
-            if (opcaoAtual > 1)
-            {
-                deleteCursor(opcaoAtual);
-                opcaoAtual--;
-            }
+            deleteCursor(opcaoAtual);
+            opcaoAtual = opcaoAtual > 1 ? opcaoAtual - 1 : 5;
             break;
         case 'S':
-            if (opcaoAtual < 5)
-            {
-                deleteCursor(opcaoAtual);
-                opcaoAtual++;
-            }
+            deleteCursor(opcaoAtual);
+            opcaoAtual = opcaoAtual < 5 ? opcaoAtual + 1 : 1;
             break;
         case 'D':
-            if (opcaoAtual != 5)
-            {
-                system("cls");
-                switch (opcaoAtual)
-                {
-                case 1:
-                    jogar();
-                    break;
-                case 2:
-                    historia();
-                    break;
-                case 3:
-                    ranking();
-                    break;
-                case 4:
-                    creditos();
-                    break;
-                }
-
-                printMenu();
-            }
-            else
+            if (opcaoAtual == 5)
                 return 0;
+
+            system("cls");
+            switch (opcaoAtual)
+            {
+            case 1:
+                jogar();
+                break;
+            case 2:
+                historia();
+                break;
+            case 3:
+                ranking();
+                break;
+            case 4:
+                creditos();
+                break;
+            }
+
+            printMenu();
             break;
         default:
             break;

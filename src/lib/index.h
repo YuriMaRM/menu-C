@@ -19,7 +19,6 @@ void fileHandler(FILE *arquivo);
 void setCursorVisibility(size_t visibility);
 void setCursorPosition(int x, int y);
 
-
 // Screens
 void creditos();
 void historia();
@@ -27,9 +26,8 @@ void jogar();
 void ranking();
 
 // Menu
-void deleteCursor(int opcaoAtual);
-void printCursor(int opcaoAtual);
+void deleteCursor(size_t opcaoAtual);
+void printCursor(size_t opcaoAtual);
 void printMenu();
-void setup();
 
 #endif
