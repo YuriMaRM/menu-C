@@ -1,4 +1,4 @@
-#include "../../index.h"
+#include "../../lib/index.h"
 
 // Seta um ponteiro com os scores armazenados
 void getScores(SCORE *scores)

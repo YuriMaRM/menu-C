@@ -5,15 +5,11 @@
             "includePath": [
                 "${default}",
                 "${workspaceFolder}",
-                "${workspaceFolder}/arquivos/",
-                "${workspaceFolder}/src/creditos/",
-                "${workspaceFolder}/src/helpers/",
-                "${workspaceFolder}/src/historia/",
-                "${workspaceFolder}/src/jogar/",
-                "${workspaceFolder}/src/menu/",
-                "${workspaceFolder}/src/ranking/",
-                "${default}/../../",
-                "${default}/../"
+                "${workspaceFolder}/src/screens/creditos/",
+                "${workspaceFolder}/src/screens/historia/",
+                "${workspaceFolder}/src/screens/menu/",
+                "${workspaceFolder}/src/screens/ranking/",
+                "${workspaceFolder}/src/helpers/"
             ],
             "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
             "cStandard": "gnu11",

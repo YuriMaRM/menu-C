@@ -7,7 +7,7 @@
         "stdio.h": "c"
     },
     "C_Cpp.default.browse.path": [],
-    "c-cpp-compile-run.c-flags": "index.h ./src/helpers/helpers.c ./src/ranking/ranking.c ./src/menu/menu.c ./src/historia/historia.c ./src/creditos/creditos.c -Wall -Wextra",
+    "c-cpp-compile-run.c-flags": "./lib/index.h ./helpers/helpers.c ./screens/ranking/ranking.c ./screens/menu/menu.c ./screens/historia/historia.c ./screens/creditos/creditos.c -Wall -Wextra",
     "c-cpp-compile-run.run-in-external-terminal": true,
     "C_Cpp.errorSquiggles": "Disabled"
 }

@@ -1,4 +1,4 @@
-#include "../../index.h"
+#include "../../lib/index.h"
 
 
 void historia()

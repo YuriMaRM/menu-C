@@ -1,4 +1,4 @@
-#include "../../index.h"
+#include "../lib/index.h"
 
 // Valida se o arquivo foi aberto corretamente
 void fileHandler(FILE *arquivo)
