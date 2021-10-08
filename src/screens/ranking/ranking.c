@@ -46,8 +46,7 @@ void insertScore(SCORE *newScores)
     fileHandler(scoresFile);
 
     for (size_t i = 0; i < 10; i++){
-        fprintf(scoresFile)
-        fwrite(&newScores[i].value, sizeof(int), 1, scoresFile);
+        fwrite(&newScores[i], sizeof(SCORE), 1, scoresFile);
     }
     fclose(scoresFile);
 }
