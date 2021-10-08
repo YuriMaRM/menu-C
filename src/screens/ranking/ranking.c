@@ -4,7 +4,7 @@
 void getScores(SCORE *scores)
 {
     size_t i = 0;
-    FILE *scoresFile = fopen("scores.bin", "rb");
+    FILE *scoresFile = fopen("./arquivos/scores.bin", "rb");
     fileHandler(scoresFile);
     SCORE aux;
 
@@ -42,11 +42,13 @@ void printRanking(SCORE *scores)
 // Insere um score no arquivo
 void insertScore(SCORE *newScores)
 {
-    FILE *scoresFile = fopen("scores.bin", "wb");
+    FILE *scoresFile = fopen("./arquivos/scores.bin", "wb");
     fileHandler(scoresFile);
 
-    for (size_t i = 0; i < 10; i++)
-        fwrite(&newScores[i], sizeof(SCORE), 1, scoresFile);
+    for (size_t i = 0; i < 10; i++){
+        fprintf(scoresFile)
+        fwrite(&newScores[i].value, sizeof(int), 1, scoresFile);
+    }
     fclose(scoresFile);
 }
 
@@ -85,29 +87,23 @@ void jogar()
                 charASCII--;
             else
                 (charASCII = 90);
-
-            newScore.name[posicao] = (char)charASCII;
             break;
         case 'S':
             if (charASCII < 90)
                 charASCII++;
             else
                 (charASCII = 65);
-
-            newScore.name[posicao] = (char)charASCII;
             break;
         case 'D':
-            if (((int)newScore.name[posicao + 1] <= 90) && ((int)newScore.name[posicao + 1] >= 65) && (posicao < 3))
-                charASCII = (int)newScore.name[posicao + 1];
-            else
-            {
-                newScore.name[posicao] = (char)charASCII;
-                charASCII = 65;
-            }
-
+            newScore.name[posicao] = (char)charASCII;
             posicao++;
+            if (((int)newScore.name[posicao] <= 90) && ((int)newScore.name[posicao] >= 65) && (posicao < 3))
+                charASCII = (int)newScore.name[posicao];
+            else
+                charASCII = 65;
             break;
         case 'A':
+            newScore.name[posicao] = (char)charASCII;
             if (posicao > 0)
             {
                 posicao--;

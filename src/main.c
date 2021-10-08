@@ -3,7 +3,7 @@
 int main()
 {
     // Configurações iniciais
-    FILE *scoresFile = fopen("scores.bin", "ab");
+    FILE *scoresFile = fopen("./arquivos/scores.bin", "ab");
     fclose(scoresFile);
     setCursorVisibility(0);
     system("chcp 65001");
